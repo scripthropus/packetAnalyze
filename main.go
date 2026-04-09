@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"net"
+	"packetanalyze/packet"
 	"syscall"
 )
 
@@ -21,9 +21,8 @@ func main() {
 			panic(err)
 		}
 
-		src := net.IP(buf[12:16])
-		dst := net.IP(buf[16:20])
-		fmt.Printf("src=%s dst=%s raw=%x\n", src, dst, buf[:n])
+		ipv4 := packet.ParseIPv4Header(buf[:n])
+		fmt.Printf("%#v\n", ipv4)
 	}
 
 }
