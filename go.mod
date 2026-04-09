@@ -1,3 +1,3 @@
-module ipv4
+module packetanalyze
 
 go 1.24.2

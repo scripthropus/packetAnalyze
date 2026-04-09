@@ -1,2 +1,4 @@
 ipv4
 *.tar.gz
+raw_packet*
+mytest/
